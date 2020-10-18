@@ -42,5 +42,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://socialnetworkbackend.herokuapp.com"
+  "proxy": "https://socialnetworkbackend.herokuapp.com",
+  "engines": {
+    "node": "12.x"
+  }
 }
