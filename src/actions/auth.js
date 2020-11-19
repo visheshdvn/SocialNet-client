@@ -74,7 +74,7 @@ export const login = (email, password) => async dispatch => {
     const body = JSON.stringify({email, password})
 
     try {
-        const res = await axios.post('https://socialnetworkbackend.herokuapp.com/api/auth', body, config)
+        const res = await axios.post('/api/auth', body, config)
 
         dispatch({
             type: LOGIN_SUCCESS,

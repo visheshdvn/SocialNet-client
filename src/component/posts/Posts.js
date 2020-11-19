@@ -10,14 +10,14 @@ import openSocket from 'socket.io-client'
 const Posts = ({getPosts, updatePosts, post: {posts, loading}}) => {
     
     useEffect(() => {
-        const socket = openSocket('https://socialnetworkbackend.herokuapp.com')
+        const socket = openSocket('http://localhost:5000')
         socket.on('posts', data => {
             if (data.action === "create") {
                 updatePosts(data.post)
             }
         })
         getPosts()
-    }, [getPosts, updatePosts])
+    }, [updatePosts])
 
     return loading ? <Spinner /> : (
         <Fragment>
