@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Avatar from 'react-avatar'
 
 const ProfileTop = ({profile: {
     status,
@@ -13,7 +14,8 @@ const ProfileTop = ({profile: {
     
     return (
         <div className="profile-top bg-primary p-2 my-1">
-          <img className="round-img my-1" src={avatar} alt="" />
+          {/* <img className="round-img my-1" src={avatar} alt="" /> */}
+              <Avatar className="round-img" name={name} size="210" textSizeRatio={1.70} />
           <h1 className="large">{name}</h1>
             <p className="lead">{status} {company && <span>at {company}</span>}  </p>
             <p>{location && <span>{location}</span> }</p>
