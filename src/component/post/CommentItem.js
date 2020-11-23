@@ -5,6 +5,7 @@ import {connect} from 'react-redux'
 import Moment from 'react-moment'
 import {deleteComment} from '../../actions/post'
 import Avatar from 'react-avatar'
+import ReactEmoji from 'react-emoji'
 
 const CommentItem = ({
     postId,
@@ -27,7 +28,7 @@ const CommentItem = ({
           </div>
           <div>
             <p class="my-1">
-              {text}
+              {ReactEmoji.emojify(text)}
             </p>
              <p class="post-date">
                 Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
