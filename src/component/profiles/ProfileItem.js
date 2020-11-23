@@ -1,17 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
+import Avatar from 'react-avatar'
 
 const ProfileItem = ({
     profile: {
-        user: {_id, name, avatar},
+        user: {_id, name},
             status,
             company,
             location,
             skills
     } }) => {
     return <div className="profile bg-light">
-            <img src={avatar} alt="" className="round-img" />
+            {/* <img src={avatar} alt="" className="round-img" /> */}
+            <Avatar className="round-img" name={name} size="160" textSizeRatio={1.70} />
             <div>
                 <h2>{name}</h2>
                 <p>{status} {company && <span> at {company}</span>}</p>

@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom'
 import Moment from 'react-moment'
 import {connect} from 'react-redux'
 import { addLike, removeLike, deletePost } from '../../actions/post'
+import ReactEmoji from 'react-emoji'
+import Avatar from 'react-avatar'
 
 const PostItem = ({addLike, removeLike, deletePost, auth, post: {
     _id, text, name, avatar, user, likes, comments, date},
@@ -14,17 +16,19 @@ const PostItem = ({addLike, removeLike, deletePost, auth, post: {
         <div className="post bg-white p-1 my-1">
           <div>
             <Link to={`/profile/${user}`}>
-              <img
+              {/* <img
                 className="round-img"
                 src={avatar}
                 alt="avatar"
-              />
+              /> */}
+              <Avatar className="round-img" name={name} size="110" textSizeRatio={1.70} />
               <h4>{name}</h4>
             </Link>
           </div>
           <div>
             <p className="my-1">
-              {text}
+              {/* {ReactEmoji.em(text)} */}
+              {ReactEmoji.emojify(text)}
             </p>
              <p className="post-date">
                 Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
